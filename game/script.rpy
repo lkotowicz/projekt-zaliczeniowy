@@ -1,33 +1,56 @@
 ﻿# The script of the game goes in this file.
 
-# Declare characters used by this game. The color argument colorizes the
-# name of the character.
+
 
 
 
 
 # The game starts here.
-
 label start:
-
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
-
-    scene bg room
-
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
-
-    show eileen happy
-
-    # These display lines of dialogue.
-
-    e "You've created a new Ren'Py game."
-
-    e "Once you add a story, pictures, and music, you can release it to the world!"
-
+    #Logo gry, intro, muzyka startowa, menu główne
+    #
+    #
+    #
+    show bg room
+    "Intro"
+    jump prologStart
+#prolog zaczyna się tutaj
+label prologStart:
+    #Wprowadzenie fabularne
+    "Prolog"
+    #Przedstawienie postaci(wstępne)
+    #
+    #
+    jump akt_1_start
+# Akt 1 zaczyna się tutaj
+label akt_1_start:
+    "Akt I"
+    #ruiny, 1-2 sceny przed rozdrożem, 
+    #rozdroże i 3 opcje przejścia konczące w tym samym miejscu, bez możliwośći powrotu(wrota sie zamykają, nie można zmienić ścieżki)
+    #
+    #scena końcowa z uwięzionymi zakończenie aktu1
+    #
+    #
+    jump akt_2_Start
+# Akt 2 zaczyna się tutaj
+label akt_2_Start:
+    "Akt II"
+    #Miasto
+    #Mapa interaktywna(scene)
+    #
+    #
+    jump outro
+#Outro zaczyna sie tutaj
+label outro:
+    "Outro"
+    #
+    #
+    #
+    #
+    jump endgame
+# This ends the game.
+label endgame:
+    "Koniec gry"
     # This ends the game.
 
     return
